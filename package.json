@@ -1,0 +1,23 @@
+{
+  "name": "LectureBuddy",
+  "version": "1.0.0",
+  "description": "Buddy for your lectures",
+  "author": "benbousquet",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "firebase": "^6.6.2",
+    "nuxt": "^2.0.0",
+    "nuxt-fire": "^2.0.0",
+    "randomatic": "^3.1.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
