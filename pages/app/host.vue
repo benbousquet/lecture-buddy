@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn>create new room</v-btn>
+    <v-btn @click="createNewRoom()">create new room</v-btn>
     <Display :roomkey="roomkey" />
     <Questions :questions="questions" :deleteQuestions="deleteQuestion" />
   </div>
@@ -34,26 +34,29 @@ export default {
         questionsList.splice(index, 1);
         lectureRoom.update({ questions: questionsList });
       });
+    },
+    createNewRoom() {
+      let roomkey = randomize("aA0a0a");
+      const lectureRef = this.$fireStore.collection("lectures");
+
+      lectureRef
+        .doc(roomkey)
+        .set({})
+        .then(() => {
+          console.log("created");
+          this.roomkey = roomkey;
+        })
+        .catch(() => {
+          console.log("Error: ", error);
+        });
+
+      lectureRef.doc(roomkey).onSnapshot(doc => {
+        this.questions = doc.data().questions;
+      });
     }
   },
   mounted() {
-    let roomkey = randomize("aA0a0a");
-    const lectureRef = this.$fireStore.collection("lectures");
-
-    lectureRef
-      .doc(roomkey)
-      .set({})
-      .then(() => {
-        console.log("created");
-        this.roomkey = roomkey;
-      })
-      .catch(() => {
-        console.log("Error: ", error);
-      });
-
-    lectureRef.doc(roomkey).onSnapshot(doc => {
-      this.questions = doc.data().questions;
-    });
+    this.createNewRoom();
   }
 };
 </script>
