@@ -11,11 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^1.0.1",
     "@nuxtjs/pwa": "^3.0.0-0",
     "firebase": "^6.6.2",
     "nuxt": "^2.0.0",
     "nuxt-fire": "^2.0.0",
-    "randomatic": "^3.1.1"
+    "randomatic": "^3.1.1",
+    "vue-qart": "^2.2.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"

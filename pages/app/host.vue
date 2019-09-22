@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn @click="createNewRoom()">create new room</v-btn>
-    <Display :roomkey="roomkey" />
+    <Display :link="link" :roomkey="roomkey" />
     <Questions :questions="questions" :deleteQuestions="deleteQuestion" />
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       roomkey: "",
+      link: "",
       questions: []
     };
   },
@@ -53,6 +54,7 @@ export default {
       lectureRef.doc(roomkey).onSnapshot(doc => {
         this.questions = doc.data().questions;
       });
+      this.link = "localhost:3000/app/attendee/" + roomkey;
     }
   },
   mounted() {

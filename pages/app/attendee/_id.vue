@@ -31,22 +31,27 @@ export default {
       top: true
     };
   },
+  created() {
+    this.joinRoom(this.$route.params.id);
+  },
   methods: {
     createSnackbar(text) {
       this.text = text;
       this.snackbar = true;
     },
     joinRoom(room) {
+      console.log("in join");
       const lectureRef = this.$fireStore
         .collection("lectures")
         .doc(room)
         .get()
         .then(doc => {
           if (!doc.exists) {
+            this.stage = 1;
             this.text = "The Roomkey is invalid!";
             this.snackbar = true;
           } else {
-            this.text = "Your question has been sent";
+            this.text = "You joined Room: " + this.room;
             this.snackbar = true;
             this.stage = 2;
             this.room = room;
@@ -55,4 +60,4 @@ export default {
     }
   }
 };
-</script>
+</script> 
