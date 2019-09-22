@@ -70,7 +70,6 @@ export default {
           "functions",
           "storage",
           "realtimeDb",
-          "messaging",
           "performance"
         ],
         customEnv: false,
