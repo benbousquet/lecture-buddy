@@ -51,7 +51,7 @@ export default {
             this.text = "The Roomkey is invalid!";
             this.snackbar = true;
           } else {
-            this.text = "You joined Room: " + this.room;
+            this.text = "You joined a room!";
             this.snackbar = true;
             this.stage = 2;
             this.room = room;
