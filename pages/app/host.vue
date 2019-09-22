@@ -24,7 +24,6 @@
     </div>
   </div>
 </template>
-
 <script>
 const push = require("push.js");
 let randomize = require("randomatic");
