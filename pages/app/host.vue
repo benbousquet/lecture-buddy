@@ -1,18 +1,23 @@
 <template>
   <div>
+    <!-- overlay for question focus feature -->
     <v-overlay :value="overlay">
       <v-card class="flexContainer">
         <v-card-actions>
+          <!-- button to close overlay -->
           <v-btn @click="overlay= false" fab x-small color="red">
             <v-icon>mdi-exit-to-app</v-icon>
           </v-btn>
         </v-card-actions>
+        <!-- popup for overlay -->
         <v-card-text>
           <h1 class="fixOverlay">{{highlightedQuestion}}</h1>
         </v-card-text>
       </v-card>
     </v-overlay>
+    <!-- button to create room for teacher -->
     <v-btn @click="createNewRoom()" color="blue">create new room</v-btn>
+    <!-- seperates the display (roomkey, etc) and questions -->
     <div class="flexContainer">
       <Display class="flexItemOne" :roomkey="roomkey" />
       <Questions
@@ -24,6 +29,7 @@
     </div>
   </div>
 </template>
+
 <script>
 // used for web browser native notifications
 const push = require("push.js");
@@ -101,10 +107,12 @@ export default {
 </script>
 
 <style scoped>
+/* puts items in rows */
 .flexContainer {
   display: flex;
   flex-direction: row;
 }
+/* assigns the smaller collumn its width and grow values */
 .flexItemOne {
   display: flex;
   flex-direction: column;
@@ -112,6 +120,7 @@ export default {
   flex-basis: auto;
   width: 25%;
 }
+/* assigns bigger collumn its width and grow values */
 .flexItemTwo {
   display: flex;
   flex-direction: column;
@@ -120,6 +129,7 @@ export default {
   flex-wrap: wrap;
   width: 75%;
 }
+/* keeps overlay text from overlapping tops and adds a margin to move text closer to button */
 .fixOverlay {
   margin-left: -15px;
   line-height: 125%;

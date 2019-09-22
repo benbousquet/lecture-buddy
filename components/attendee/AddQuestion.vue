@@ -53,6 +53,8 @@ export default {
 </script>
 
 <style scoped>
+/* puts items in a row and moves the button to the right side */
+/* decreases from top margin to make button closer */
 .flexContainer {
   display: flex;
   flex-direction: row;

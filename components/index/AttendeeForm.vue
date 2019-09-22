@@ -10,11 +10,13 @@
 </template>
 
 <style scoped>
+/* aligns button to center of v-card */
 .flexContainer {
   display: flex;
   flex-direction: column;
   align-content: center;
 }
+/* adds padding to make v-card look nicer with text */
 .addPadding {
   padding: 10px;
 }
