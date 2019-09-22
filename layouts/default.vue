@@ -2,7 +2,9 @@
   <v-app dark>
     <v-content>
       <v-container>
+        <!-- header -->
         <Header />
+        <!-- main content -->
         <nuxt />
       </v-container>
     </v-content>

@@ -22,20 +22,25 @@ export default {
     };
   },
   methods: {
+    // adds question to firestore
     addQuestion() {
+      // ensures user doesnt input nothing
       if (this.input.length === 0) {
         this.createSnackbar("Please enter something to ask!");
         return;
       }
-
+      // ref to the lecture room in firestore
       const lectureRoom = this.$fireStore.collection("lectures").doc(this.room);
 
+      // call to firestore
       lectureRoom.get().then(doc => {
+        // if the firestore document is empty then create a new object and insert it into 
         if (Object.keys(doc.data()).length === 0) {
           lectureRoom.update({ questions: [this.input] });
           this.createSnackbar("Your question has been sent!");
           this.input = "";
         }
+        // if not then add it to the array of current questions
         let currentQuestions = doc.data().questions;
         currentQuestions.push(this.input);
         lectureRoom.update({ questions: currentQuestions });

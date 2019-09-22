@@ -1,6 +1,7 @@
 <template>
   <div class="flexContainer">
     <h1>Lecture Buddy</h1>
+    <!-- home button -->
     <v-btn color="green" class="addMargin" to="/">
       <v-icon>mdi-home</v-icon>
     </v-btn>

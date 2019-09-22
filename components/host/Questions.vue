@@ -1,9 +1,12 @@
 <template>
   <div>
+    <!-- display all questions passed from parent -->
     <div class="flexItem" v-for="(question, index) in questions" :key="index">
+      <!-- uses deleteQuestions method from parent to delete question -->
       <v-btn @click="deleteQuestions(index)" fab x-small color="red" class="addMargin">
         <v-icon dark>mdi-cancel</v-icon>
       </v-btn>
+      <!-- uses highlightQuestion method from parent to highlight question -->
       <v-btn @click="highlightQuestion(question)" fab x-small color="blue" class="addMargin">
         <v-icon dark>mdi-magnify</v-icon>
       </v-btn>

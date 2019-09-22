@@ -6,6 +6,7 @@
         <v-textarea label="Eg. 1n0dLe" v-model="room" rows="1" outlined></v-textarea>
       </v-card-text>
       <v-card-actions class="flexContainer">
+        <!-- calls join room method from parent -->
         <v-btn @click="joinRoom(room)" color="blue" x-large>Join</v-btn>
       </v-card-actions>
     </v-card>

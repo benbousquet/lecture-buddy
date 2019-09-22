@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Roomkey: {{roomkey}}</h1>
+    <!-- display QR-code -->
     <qrcode
       :value="'https://lecturebuddy.herokuapp.com/app/attendee/' + roomkey"
       :options="{ width: 200 }"
