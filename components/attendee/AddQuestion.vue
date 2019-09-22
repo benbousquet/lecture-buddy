@@ -4,10 +4,10 @@
     <v-card>
       <v-card-title>Got a 🔥burning🔥 question?</v-card-title>
       <v-card-text>
-        <v-textarea v-model="input" outlined name="input-7-4" label="Solo textarea"></v-textarea>
+        <v-textarea v-model="input" outlined name="input-7-4" label="Enter Question"></v-textarea>
       </v-card-text>
-      <v-card-actions>
-        <v-btn @click="addQuestion()">Ask!</v-btn>
+      <v-card-actions class="flexContainer">
+        <v-btn @click="addQuestion()" color="blue" x-large>Ask!</v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -25,6 +25,7 @@ export default {
     addQuestion() {
       if (this.input.length === 0) {
         this.createSnackbar("Please enter something to ask!");
+        return;
       }
 
       const lectureRoom = this.$fireStore.collection("lectures").doc(this.room);
@@ -32,13 +33,26 @@ export default {
       lectureRoom.get().then(doc => {
         if (Object.keys(doc.data()).length === 0) {
           lectureRoom.update({ questions: [this.input] });
+          this.createSnackbar("Your question has been sent!");
+          this.input = "";
         }
         let currentQuestions = doc.data().questions;
         currentQuestions.push(this.input);
         lectureRoom.update({ questions: currentQuestions });
         this.createSnackbar("Your question has been sent!");
+        this.input = "";
       });
     }
   }
 };
 </script>
+
+<style scoped>
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: -45px;
+}
+</style>

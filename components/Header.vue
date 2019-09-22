@@ -1,17 +1,20 @@
 <template>
   <div class="flexContainer">
-    <div clas="flexItem">
-      <h1>Lecture Buddy</h1>
-    </div>
+    <v-btn color="green" class="addMargin" to="/">
+      <v-icon>mdi-home</v-icon>
+    </v-btn>
+    <h1>Lecture Buddy</h1>
   </div>
 </template>
 
 <style scoped>
+.addMargin {
+  margin-right: 10px;
+  margin-top: 6px;
+}
 .flexContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 20px;
-  width: 100%;
 }
 </style>

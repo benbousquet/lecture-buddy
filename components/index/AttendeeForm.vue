@@ -1,24 +1,21 @@
 <template>
   <div>
-    <h1>For Students & Attendees</h1>
-    <v-card>
-      <v-card-text>
-        <v-btn to="/app/attendee">Join</v-btn>
-      </v-card-text>
+    <v-card class="addPadding">
+      <h1 class="text-center">For Students & Attendees</h1>
+      <v-card-actions class="flexContainer">
+        <v-btn color="blue" to="/app/attendee" x-large>Join</v-btn>
+      </v-card-actions>
     </v-card>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      roomkey: "",
-      rules: {
-        length: len => v =>
-          (v || "").length >= len || `Invalid character length, required ${len}`
-      }
-    };
-  }
-};
-</script>
+<style scoped>
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.addPadding {
+  padding: 10px;
+}
+</style>

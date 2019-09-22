@@ -1,22 +1,27 @@
 <template>
   <div>
     <v-overlay :value="overlay">
-      <v-btn icon @click="overlay = false">
-        <v-card>
-          <v-card-text>
-            <h1>{{highlightedQuestion}}</h1>
-          </v-card-text>
-        </v-card>
-      </v-btn>
+      <v-card class="flexContainer">
+        <v-card-actions>
+          <v-btn @click="overlay= false" fab x-small color="red">
+            <v-icon>mdi-exit-to-app</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-card-text>
+          <h1 class="fixOverlay">{{highlightedQuestion}}</h1>
+        </v-card-text>
+      </v-card>
     </v-overlay>
     <v-btn @click="createNewRoom()">create new room</v-btn>
-
-    <Display :roomkey="roomkey" />
-    <Questions
-      :questions="questions"
-      :deleteQuestions="deleteQuestion"
-      :highlightQuestion="highlightQuestion"
-    />
+    <div class="flexContainer">
+      <Display class="flexItemOne" :roomkey="roomkey" />
+      <Questions
+        class="flexItemTwo"
+        :questions="questions"
+        :deleteQuestions="deleteQuestion"
+        :highlightQuestion="highlightQuestion"
+      />
+    </div>
   </div>
 </template>
 
@@ -30,7 +35,7 @@ export default {
       roomkey: "",
       questions: [],
       overlay: false,
-      highlightedQuestion: "Why is the Earth flat?"
+      highlightedQuestion: ""
     };
   },
   components: {
@@ -80,3 +85,29 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+}
+.flexItemOne {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.25;
+  flex-basis: auto;
+  width: 25%;
+}
+.flexItemTwo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.75;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  width: 75%;
+}
+.fixOverlay {
+  margin-left: -15px;
+  line-height: 125%;
+}
+</style>

@@ -1,14 +1,6 @@
 <template>
-  <div class="flexContainer">
-    <div class="flexItem">
-      <h3>Why use us?</h3>
-      <v-timeline>
-        <v-timeline-item>timeline item</v-timeline-item>
-        <v-timeline-item class="text-right">timeline item</v-timeline-item>
-        <v-timeline-item>timeline item</v-timeline-item>
-      </v-timeline>
-    </div>
-    <div class="flexItem">
+  <div>
+    <div class="flexContainer">
       <HostForm />
       <AttendeeForm />
     </div>
@@ -30,14 +22,8 @@ export default {
 .flexContainer {
   display: flex;
   flex-direction: row;
-  padding: 30px;
-}
-.flexItem {
-  display: flex;
-  flex-direction: column;
   flex: 1;
-}
-.flexItem > v-timeline-item {
-  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 </style>
