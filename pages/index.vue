@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <div class="flexContainer">
-      <HostForm class="pad" />
-      <AttendeeForm />
-    </div>
+  <!-- puts in the host and atendee components, allowing them to navigate the page -->
+  <div class="flexContainer">
+    <HostForm class="pad" />
+    <AttendeeForm />
   </div>
 </template>
 
 <script>
+// imports the components for use on webpage
 import HostForm from "~/components/index/HostForm";
 import AttendeeForm from "~/components/index/AttendeeForm";
+// assigns components
 export default {
   components: {
     HostForm,

@@ -1,18 +1,23 @@
 <template>
   <div>
+    <!-- overlay for question focus feature -->
     <v-overlay :value="overlay">
       <v-card class="flexContainer">
         <v-card-actions>
+          <!-- button to close overlay -->
           <v-btn @click="overlay= false" fab x-small color="red">
             <v-icon>mdi-exit-to-app</v-icon>
           </v-btn>
         </v-card-actions>
+        <!-- popup for overlay -->
         <v-card-text>
           <h1 class="fixOverlay">{{highlightedQuestion}}</h1>
         </v-card-text>
       </v-card>
     </v-overlay>
+    <!-- button to create room for teacher -->
     <v-btn @click="createNewRoom()" color="blue">create new room</v-btn>
+    <!-- seperates the display (roomkey, etc) and questions -->
     <div class="flexContainer">
       <Display class="flexItemOne" :roomkey="roomkey" />
       <Questions
@@ -24,6 +29,7 @@
     </div>
   </div>
 </template>
+
 <script>
 const push = require("push.js");
 let randomize = require("randomatic");
