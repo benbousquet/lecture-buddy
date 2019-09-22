@@ -4,7 +4,7 @@
     <v-btn color="green" class="addMargin" to="/">
       <v-icon>mdi-home</v-icon>
     </v-btn>
-    <!-- <LogoutButton class="addMargin" /> -->
+    <!-- For future implementation of authentication. <LogoutButton class="addMargin" /> -->
   </div>
 </template>
 
@@ -18,10 +18,12 @@ export default {
 </script>
 
 <style scoped>
+/* adds margins to home button to clean up spacing */
 .addMargin {
   margin-left: 10px;
   margin-top: 6px;
 }
+/* aligns items and adds padding to space out components */
 .flexContainer {
   display: flex;
   flex-direction: row;

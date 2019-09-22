@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style scoped>
+/* aligns items in a row and centers them in their block */
 .flexItem {
   display: flex;
   flex-direction: row;
@@ -29,9 +30,11 @@ export default {
   margin-bottom: 5px;
   flex-wrap: wrap;
 }
+/* adds a margin to the right of the buttons to make spacing look nice */
 .addMargin {
   margin-right: 4px;
 }
+/* adds padding to the text so v-card isn't right on the edge */
 .textMargin {
   padding-left: 4px;
   padding-right: 4px;

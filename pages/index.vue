@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flexContainer">
-      <HostForm class="padOne" />
-      <AttendeeForm class="padTwo" />
+      <HostForm class="pad" />
+      <AttendeeForm />
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style scoped>
+/* spaces out main objects, adds wrapping for mobile devices, adds a top margin to move elements down */
 .flexContainer {
   display: flex;
   flex-direction: row;
@@ -27,10 +28,8 @@ export default {
   margin-top: 30px;
   flex-wrap: wrap;
 }
-.padOne {
-  padding-bottom: 3px;
-}
-.padTwo {
-  padding-top: 3px;
+/* adds padding to the bottom to fix display on mobile devices */
+.pad {
+  padding-bottom: 6px;
 }
 </style>

@@ -94,10 +94,12 @@ export default {
 </script>
 
 <style scoped>
+/* puts items in rows */
 .flexContainer {
   display: flex;
   flex-direction: row;
 }
+/* assigns the smaller collumn its width and grow values */
 .flexItemOne {
   display: flex;
   flex-direction: column;
@@ -105,6 +107,7 @@ export default {
   flex-basis: auto;
   width: 25%;
 }
+/* assigns bigger collumn its width and grow values */
 .flexItemTwo {
   display: flex;
   flex-direction: column;
@@ -113,6 +116,7 @@ export default {
   flex-wrap: wrap;
   width: 75%;
 }
+/* keeps overlay text from overlapping tops and adds a margin to move text closer to button */
 .fixOverlay {
   margin-left: -15px;
   line-height: 125%;
