@@ -1,8 +1,22 @@
 <template>
   <div>
+    <v-overlay :value="overlay">
+      <v-btn icon @click="overlay = false">
+        <v-card>
+          <v-card-text>
+            <h1>{{highlightedQuestion}}</h1>
+          </v-card-text>
+        </v-card>
+      </v-btn>
+    </v-overlay>
     <v-btn @click="createNewRoom()">create new room</v-btn>
-    <Display :link="link" :roomkey="roomkey" />
-    <Questions :questions="questions" :deleteQuestions="deleteQuestion" />
+
+    <Display :roomkey="roomkey" />
+    <Questions
+      :questions="questions"
+      :deleteQuestions="deleteQuestion"
+      :highlightQuestion="highlightQuestion"
+    />
   </div>
 </template>
 
@@ -14,8 +28,9 @@ export default {
   data() {
     return {
       roomkey: "",
-      link: "",
-      questions: []
+      questions: [],
+      overlay: false,
+      highlightedQuestion: "Why is the Earth flat?"
     };
   },
   components: {
@@ -54,7 +69,10 @@ export default {
       lectureRef.doc(roomkey).onSnapshot(doc => {
         this.questions = doc.data().questions;
       });
-      this.link = "localhost:3000/app/attendee/" + roomkey;
+    },
+    highlightQuestion(text) {
+      this.highlightedQuestion = text;
+      this.overlay = true;
     }
   },
   mounted() {

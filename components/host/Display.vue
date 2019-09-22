@@ -11,6 +11,6 @@ export default {
   components: {
     qrcode: VueQrcode
   },
-  props: ["roomkey", "link"]
+  props: ["roomkey"]
 };
 </script>

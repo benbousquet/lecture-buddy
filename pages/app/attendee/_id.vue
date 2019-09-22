@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       // 1: roomkeyform 2: addquestion
-      stage: 1,
+      stage: 2,
       room: "",
       snackbar: false,
       text: "",

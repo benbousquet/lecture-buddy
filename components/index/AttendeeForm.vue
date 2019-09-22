@@ -3,7 +3,7 @@
     <h1>For Students & Attendees</h1>
     <v-card>
       <v-card-text>
-        <v-btn>Join</v-btn>
+        <v-btn to="/app/attendee">Join</v-btn>
       </v-card-text>
     </v-card>
   </div>

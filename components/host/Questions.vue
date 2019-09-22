@@ -4,6 +4,9 @@
       <v-btn @click="deleteQuestions(index)" fab x-small color="red">
         <v-icon dark right>mdi-cancel</v-icon>
       </v-btn>
+      <v-btn @click="highlightQuestion(question)" fab x-small color="blue">
+        <v-icon dark right>mdi-magnify</v-icon>
+      </v-btn>
       <p>{{question}}</p>
     </div>
   </div>
@@ -11,7 +14,7 @@
 
 <script>
 export default {
-  props: ["questions", "deleteQuestions"],
+  props: ["questions", "deleteQuestions", "highlightQuestion"],
   created() {
     console.log("questions created");
   }
