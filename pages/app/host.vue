@@ -12,7 +12,7 @@
         </v-card-text>
       </v-card>
     </v-overlay>
-    <v-btn @click="createNewRoom()">create new room</v-btn>
+    <v-btn @click="createNewRoom()" color="blue">create new room</v-btn>
     <div class="flexContainer">
       <Display class="flexItemOne" :roomkey="roomkey" />
       <Questions
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+const push = require("push.js");
 let randomize = require("randomatic");
 import Display from "~/components/host/Display";
 import Questions from "~/components/host/Questions";
@@ -35,7 +36,8 @@ export default {
       roomkey: "",
       questions: [],
       overlay: false,
-      highlightedQuestion: ""
+      highlightedQuestion: "",
+      questionNumber: 0
     };
   },
   components: {
@@ -73,6 +75,11 @@ export default {
 
       lectureRef.doc(roomkey).onSnapshot(doc => {
         this.questions = doc.data().questions;
+        if (this.questionNumber != 0) {
+          push.create("Someone asked a question!");
+        }
+
+        this.questionNumber++;
       });
     },
     highlightQuestion(text) {

@@ -6209,6 +6209,11 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+push.js@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/push.js/-/push.js-1.0.12.tgz#5703a03f5d286cd46d58564cb27bc079898d26b1"
+  integrity sha512-Mo/zkrPD58hcbMvC/9WveUPGz0PJ4T5UwQJP6DnMYbyxe7b1xM/9qqmJTMmDcprbZjCtLzf9wWtek7gA8O9QBw==
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -7477,6 +7482,11 @@ vue-meta@^2.2.1:
   integrity sha512-aSzjfc5xV3szxPZMsSk6JeoHUqwrVHNPzpMciTCek56LDd2xKWCv+Ch4IGWL5EIxVyfxA+krsD7T11PTyLY4TQ==
   dependencies:
     deepmerge "^4.0.0"
+
+vue-native-notification@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue-native-notification/-/vue-native-notification-1.0.5.tgz#44fa185e4b48f376ef7ce2d2ddde8740f2aa40dc"
+  integrity sha512-ssuJtSMP2LwL5P15JDxHbpW4s6xt9oyE06wvUoqJsgwB5yp6vvohiCGIBd5Ew7HcBZnb/T+b6Rihdo0dJNMLqQ==
 
 vue-no-ssr@^1.1.1:
   version "1.1.1"

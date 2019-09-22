@@ -16,7 +16,9 @@
     "firebase": "^6.6.2",
     "nuxt": "^2.0.0",
     "nuxt-fire": "^2.0.0",
+    "push.js": "^1.0.12",
     "randomatic": "^3.1.1",
+    "vue-native-notification": "^1.0.5",
     "vue-qart": "^2.2.0"
   },
   "devDependencies": {
