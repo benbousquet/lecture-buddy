@@ -84,9 +84,10 @@ export default {
       // listen for new questions
       lectureRef.doc(roomkey).onSnapshot(doc => {
         // refresh the questions
+        let oldLength = this.questions.length;
         this.questions = doc.data().questions;
         // if question is not 0 then prompt the host
-        if (this.questionNumber != 0) {
+        if (this.questionNumber != 0 && this.questions.length > oldLength) {
           push.create("Someone asked a question!");
         }
 
