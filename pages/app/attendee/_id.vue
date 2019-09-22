@@ -31,7 +31,7 @@ export default {
       top: true
     };
   },
-  created() {
+  beforeCreate() {
     this.joinRoom(this.$route.params.id);
   },
   methods: {
