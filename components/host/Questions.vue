@@ -7,7 +7,7 @@
       <v-btn @click="highlightQuestion(question)" fab x-small color="blue" class="addMargin">
         <v-icon dark>mdi-magnify</v-icon>
       </v-btn>
-      <v-card>{{question}}</v-card>
+      <v-card class="textMargin">{{question}}</v-card>
     </div>
   </div>
 </template>
@@ -22,17 +22,19 @@ export default {
 </script>
 
 <style scoped>
-.flexContainer {
-  display: flex;
-  flex-direction: column;
-}
 .flexItem {
   display: flex;
   flex-direction: row;
   align-content: center;
   margin-bottom: 5px;
+  flex-wrap: wrap;
 }
 .addMargin {
   margin-right: 4px;
+}
+.textMargin {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flexContainer">
-      <HostForm />
-      <AttendeeForm />
+      <HostForm class="padOne" />
+      <AttendeeForm class="padTwo" />
     </div>
   </div>
 </template>
@@ -25,5 +25,12 @@ export default {
   flex: 1;
   justify-content: space-evenly;
   margin-top: 30px;
+  flex-wrap: wrap;
+}
+.padOne {
+  padding-bottom: 3px;
+}
+.padTwo {
+  padding-top: 3px;
 }
 </style>
