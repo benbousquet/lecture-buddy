@@ -1,7 +1,7 @@
 import colors from "vuetify/es5/util/colors";
 
 export default {
-  // mode: "",
+  // mode: "spa",
   /*
    ** Headers of the page
    */
